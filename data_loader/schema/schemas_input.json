@@ -1,0 +1,143 @@
+{
+  "contrat": {
+    "idctr": "long",
+    "cdetypctr": "string",
+    "numctr": "integer",
+    "indcsbl": "integer",
+    "second": "integer",
+    "datdbtctr": "date",
+    "datfinctr": "date",
+    "numinf": "integer",
+    "idtercmplx": "integer",
+    "datdbtsys": "date",
+    "datfinsys": "date",
+    "fledit": "integer",
+    "biem": "integer",
+    "cdestatutctr": "string",
+    "expireffetimmediat": "integer",
+    "idtercess": "integer",
+    "optaffl": "integer",
+    "datfincollect": "date"
+  },
+  "detcedant": {
+    "iddetcedant": "long",
+    "idpcttypdrt": "long",
+    "idctr": "long",
+    "idpcttypdrtcre": "long",
+    "numpers": "long"
+  },
+  "detcedantcatal": {
+    "iddetcedant": "long",
+    "numcatal": "long"
+  },
+  "detcess": {
+    "iddetcessnr": "long",
+    "cdecategadsacem": "string",
+    "numcatal": "long",
+    "numpers": "long",
+    "gestnr": "integer",
+    "datdbtvld": "date",
+    "datfinvld": "date",
+    "idctr": "long",
+    "idpcttypdrt": "long"
+  },
+  "jeucle": {
+    "idjeucle": "long",
+    "datdbtsys": "date",
+    "datfinsys": "date",
+    "datdbtvld": "date",
+    "datfinvld": "date",
+    "cdetypdrtsacem": "string",
+    "idcess": "long"
+  },
+  "cess": {
+    "idcess": "long",
+    "idtercmplx": "integer",
+    "priort": "integer",
+    "idoeuv": "long",
+    "datdbtsys": "date",
+    "datfinsys": "date"
+  },
+  "pcttypdrt": {
+    "idpcttypdrt": "long",
+    "idclauspartcl": "string",
+    "cdetypdrtsacem": "string",
+    "pct": "double"
+  },
+  "restrctr": {
+    "idrestctr": "long",
+    "idctr": "long",
+    "additif": "integer"
+  },
+  "restrgenre": {
+    "idrestctr": "long",
+    "cdegreoeuv": "string"
+  },
+  "restroeuv": {
+    "idrestctr": "long",
+    "ide12": "long"
+  },
+  "eltter": {
+    "ideltter": "long",
+    "idtercmplx": "integer",
+    "cdepaysiso4n": "integer",
+    "incl": "integer",
+    "ordaff": "integer",
+    "ord_list": "float"
+  },
+  "oeuv": {
+    "idoeuv": "long",
+    "cdestatutoeuv": "integer",
+    "paysori": "integer",
+    "cdegreoeuv": "string",
+    "ide12": "long",
+    "datdepot": "date",
+    "datcre": "date",
+    "datdbtsys": "date",
+    "datfinsys": "date",
+    "toreindex": "integer",
+    "datmaj": "date",
+    "datmajtech": "date",
+    "publierevt": "bool"
+  },
+  "partpt": {
+    "idoeuv": "long",
+    "idpartpt": "long",
+    "numnom": "string",
+    "numnomgp": "string",
+    "edtrsubst": "string",
+    "partedtr": "float",
+    "let": "string",
+    "cdecategadsacem": "string",
+    "numcatal": "long",
+    "numpers": "long",
+    "datdbtvld": "date",
+    "datfinvld": "date",
+    "nomdeclt": "string",
+    "prndeclt": "string",
+    "nomfid": "string",
+    "id": "long",
+    "dscrmt": "string",
+    "numpartptspeci": "long",
+    "ipnamenrforcage": "long",
+    "idbranche": "long"
+  },
+  "ayant_droit": {
+    "idayantdrt": "long",
+    "idjeucle": "long",
+    "idpartpt": "long",
+    "cle": "float",
+    "numcatalrepst": "long",
+    "cedant": "integer",
+    "gestnr": "integer",
+    "comacc": "integer",
+    "cde_motif_mise_en_attente": "string",
+    "droit_mise_en_attente": "float"
+  },
+  "restrpers": {
+    "idrestctr": "long",
+    "numpers": "long",
+    "numcatal": "long",
+    "cdeexignc": "string"
+  }
+}

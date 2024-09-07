@@ -1,0 +1,12 @@
+{
+  "expected": {
+    "ide12": "long",
+    "lettrage": "string",
+    "numcatal_cedant_origine": "long",
+    "role_ad_origine": "string",
+    "numcatal_ayant_droit_final": "long",
+    "role_ad_final": "string",
+    "chaine_contrats": "string_optional",
+    "cle": "float"
+  }
+}

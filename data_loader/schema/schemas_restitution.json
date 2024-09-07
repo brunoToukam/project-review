@@ -1,0 +1,98 @@
+{
+  "oeuv": {
+    "rds_table_name": "octavt_oeuv",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idoeuv": "long",
+      "cdestatutoeuv": "integer",
+      "paysori": "integer",
+      "cdegreoeuv": "long",
+      "ide12": "long",
+      "datdepot": "date",
+      "datcre": "date",
+      "datdbtsys": "date",
+      "datfinsys": "date",
+      "toreindex": "float",
+      "datmaj": "date",
+      "datmajtech": "date",
+      "publierevt": "integer"
+    }
+  },
+  "cess": {
+    "rds_table_name": "octavt_cess",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idcess": "long",
+      "idtercmplx": "integer",
+      "priort": "long",
+      "idoeuv": "long",
+      "datdbtsys": "date",
+      "datfinsys": "date"
+    }
+  },
+  "jeucle": {
+    "rds_table_name": "octavt_jeucle",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idjeucle": "long",
+      "datdbtsys": "date",
+      "datfinsys": "date",
+      "datdbtvld": "date",
+      "datfinvld": "date",
+      "cdetypdrtsacem": "string",
+      "idcess": "long"
+    }
+  },
+  "ayant_droit": {
+    "rds_table_name": "octavt_ayantdrt",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idayantdrt": "long",
+      "idjeucle": "long",
+      "idpartpt": "long",
+      "cle": "double",
+      "numcatalrepst": "long",
+      "cedant": "integer",
+      "gestnr": "integer",
+      "comacc": "integer",
+      "cde_motif_mise_en_attente": "integer",
+      "droit_mise_en_attente": "integer"
+    }
+  },
+  "partpt": {
+    "rds_table_name": "octavt_partpt",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idoeuv": "long",
+      "idpartpt": "long",
+      "numnom": "string",
+      "numnomgp": "string",
+      "edtrsubst": "string",
+      "partedtr": "float",
+      "let": "string",
+      "cdecategadsacem": "string",
+      "numcatal": "long",
+      "numpers": "long",
+      "datdbtvld": "date",
+      "datfinvld": "date",
+      "nomdeclt": "string",
+      "prndeclt": "string",
+      "nomfid": "string",
+      "id": "long",
+      "dscrmt": "string",
+      "numpartptspeci": "long",
+      "ipnamenrforcage": "long",
+      "idbranche": "long"
+    }
+  },
+  "computed": {
+    "territories": {
+      "cdepaysiso4n": "integer",
+      "cdepaysiso4n_fils": "array"
+    },
+    "territories_by_id_tercmplx": {
+      "idtercmplx": "integer",
+      "territoires": "array"
+    }
+  }
+}

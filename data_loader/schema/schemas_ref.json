@@ -1,0 +1,13 @@
+{
+  "gpeter": {
+    "cdepaysiso4npere": "integer",
+    "cdepaysiso4nfils": "integer",
+    "gpeterfils": "integer",
+    "datcre": "date",
+    "usercre": "string",
+    "datmaj": "date",
+    "usermaj": "string",
+    "datdbtvld": "date",
+    "datfinvld": "date"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "territories": {
+    "cdepaysiso4n": "integer",
+    "cdepaysiso4n_fils": "array"
+  },
+  "territories_by_id_tercmplx": {
+    "idtercmplx": "integer",
+    "territoires": "array"
+  },
+  "contracts_strings": {
+    "numctr": "array",
+    "numinf": "array",
+    "cdetypctr": "string",
+    "indcsbl": "integer",
+    "numpers_cedant": "long",
+    "cdetypdrtsacem": "string",
+    "pct_editeur": "float",
+    "pct_createur": "float",
+    "pct_cess": "float",
+    "lettrage_cedant": "string",
+    "cdecategadsacem_cedant": "string",
+    "cdecategadsacem_cess": "string",
+    "numcatal_cedant": "long",
+    "numcatal_cess": "long",
+    "numpers_cess": "long",
+    "territoires": "array",
+    "biem": "integer",
+    "cdestatutctr": "integer",
+    "expireffetimmediat": "integer",
+    "idtercess": "long",
+    "fledit": "integer",
+    "datdbtctr": "date",
+    "datfinctr": "date",
+    "restr_genre_include": "array_string",
+    "restr_genre_exclude": "array_string",
+    "restr_numcatal_include": "array_long",
+    "restr_numcatal_exclude": "array_long",
+    "restr_oeuvre_include": "array_long",
+    "restr_oeuvre_exclude": "array_long",
+    "restr_pers_exigence": "array_string"
+  }
+}

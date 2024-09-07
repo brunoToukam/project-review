@@ -1,0 +1,11 @@
+{
+  "contexte": {
+    "num_contexte": "integer",
+    "code_iso4n_pays": "integer",
+    "code_famille_type_utilisation": "string",
+    "code_type_utilisation": "string",
+    "code_type_droit": "string",
+    "date_consultation": "date",
+    "date_effet": "date"
+  }
+}

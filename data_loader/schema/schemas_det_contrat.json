@@ -1,0 +1,168 @@
+{
+  "contrat": {
+    "rds_table_name": "octavt_contrat",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idctr": "long",
+      "cdetypctr": "string",
+      "numctr": "integer",
+      "indcsbl": "integer",
+      "second": "integer",
+      "datdbtctr": "date",
+      "datfinctr": "date",
+      "numinf": "integer",
+      "idtercmplx": "integer",
+      "datdbtsys": "date",
+      "datfinsys": "date",
+      "fledit": "integer",
+      "biem": "integer",
+      "cdestatutctr": "string",
+      "expireffetimmediat": "integer",
+      "idtercess": "integer",
+      "optaffl": "integer",
+      "datfincollect": "date"
+    }
+  },
+  "detcedant": {
+    "rds_table_name": "octavt_detcedant",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "iddetcedant": "long",
+      "idpcttypdrt": "long",
+      "idctr": "long",
+      "idpcttypdrtcre": "long",
+      "numpers": "long"
+    }
+  },
+  "detcedantcatal": {
+    "rds_table_name": "octavtj_detcedantcatal",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "iddetcedant": "long",
+      "numcatal": "long"
+    }
+  },
+  "detcess": {
+    "rds_table_name": "octavt_detcessnr",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "iddetcessnr": "long",
+      "cdecategadsacem": "string",
+      "numcatal": "long",
+      "numpers": "long",
+      "gestnr": "integer",
+      "datdbtvld": "date",
+      "datfinvld": "date",
+      "idctr": "long",
+      "idpcttypdrt": "long"
+    }
+  },
+  "pcttypdrt": {
+    "rds_table_name": "octavt_pcttypdrt",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idpcttypdrt": "long",
+      "idclauspartcl": "string",
+      "cdetypdrtsacem": "string",
+      "pct": "double"
+    }
+  },
+  "restrctr": {
+    "rds_table_name": "octavt_restrctr",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idrestctr": "long",
+      "idctr": "long",
+      "additif": "integer"
+    }
+  },
+  "restrgenre": {
+    "rds_table_name": "octavt_restrgenre",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idrestctr": "long",
+      "cdegreoeuv": "string"
+    }
+  },
+  "restroeuv": {
+    "rds_table_name": "octavt_restroeuv",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idrestctr": "long",
+      "ide12": "long"
+    }
+  },
+  "eltter": {
+    "rds_table_name": "octavt_eltter",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "ideltter": "long",
+      "idtercmplx": "integer",
+      "cdepaysiso4n": "integer",
+      "incl": "integer",
+      "ordaff": "integer",
+      "ord_list": "float"
+    }
+  },
+  "partpt": {
+    "rds_table_name": "octavt_partpt",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idoeuv": "long",
+      "idpartpt": "long",
+      "numnom": "string",
+      "numnomgp": "string",
+      "edtrsubst": "string",
+      "partedtr": "float",
+      "let": "string",
+      "cdecategadsacem": "string",
+      "numcatal": "long",
+      "numpers": "long",
+      "datdbtvld": "date",
+      "datfinvld": "date",
+      "nomdeclt": "string",
+      "prndeclt": "string",
+      "nomfid": "string",
+      "id": "long",
+      "dscrmt": "string",
+      "numpartptspeci": "long",
+      "ipnamenrforcage": "long",
+      "idbranche": "long"
+    }
+  },
+  "restrpers": {
+    "rds_table_name": "octavt_restrpers",
+    "rds_schema": "octav1_app",
+    "attributes": {
+      "idrestctr": "long",
+      "numpers": "long",
+      "numcatal": "long",
+      "cdeexignc": "string"
+    }
+  },
+  "gpeter": {
+    "rds_table_name": "sareftj_gpeter",
+    "rds_schema": "xxsaref_app",
+    "attributes": {
+      "cdepaysiso4npere": "integer",
+      "cdepaysiso4nfils": "integer",
+      "gpeterfils": "integer",
+      "datcre": "date",
+      "usercre": "string",
+      "datmaj": "date",
+      "usermaj": "string",
+      "datdbtvld": "date",
+      "datfinvld": "date"
+    }
+  },
+  "computed": {
+    "territories": {
+      "cdepaysiso4n": "integer",
+      "cdepaysiso4n_fils": "array"
+    },
+    "territories_by_id_tercmplx": {
+      "idtercmplx": "integer",
+      "territoires": "array"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+*.iml
+.idea
+**/__pycache__
+**/*.jar
+.venv
+.env
+data/csv
+data/parquet
+data/setup_usecases/*/computed/*
+unused
+build_contrat

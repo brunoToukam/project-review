@@ -1,0 +1,38 @@
+{
+  "name": "test_contrat_limited_emr",
+  "virtualClusterId": "4gdj0qhgzq3h1059yh3tnpm0l",
+  "executionRoleArn": "arn:aws:iam::806535937423:role/sacem-perfo-EMRContainers-JobExecutionRole-dev",
+  "releaseLabel": "emr-7.1.0-latest",
+  "jobDriver": {
+    "sparkSubmitJobDriver": {
+      "entryPoint": "local:///perfo_workdir/emr_determination_chaine_contrat.py",
+      "entryPointArguments": [
+        "--data_source",
+        "s3a://sacem-perfo-emr-poc-dev/contrat_replication/",
+        "--output_uri",
+        "s3a://sacem-perfo-emr-poc-dev/output/",
+        "--max_depth", "4"
+      ],
+      "sparkSubmitParameters": "--conf spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version=2 --conf spark.kubernetes.container.image.pullPolicy=IfNotPresent --conf spark.kubernetes.node.selector.reserved-for=dataexpo --conf spark.kubernetes.executor.node.selector.reserved-for=dataexpo --conf spark.hadoop.fs.s3a.endpoint=s3.eu-west-1.amazonaws.com --conf spark.hadoop.fs.s3a.aws.credentials.provider=com.amazonaws.auth.DefaultAWSCredentialsProviderChain --conf spark.sql.legacy.timeParserPolicy=LEGACY --conf spark.sql.legacy.parquet.int96RebaseModeInRead=CORRECTED --conf spark.sql.legacy.parquet.int96RebaseModeInWrite=CORRECTED --conf spark.sql.legacy.parquet.datetimeRebaseModeInRead=CORRECTED --conf spark.sql.legacy.parquet.datetimeRebaseModeInWrite=CORRECTED --conf spark.executor.instances=20 --conf spark.executor.memory=12g --conf spark.executor.cores=5 --conf spark.driver.cores=3 --conf spark.driver.memory=12g --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.kryoserializer.buffer.max=1g --conf spark.kubernetes.container.image=806535937423.dkr.ecr.eu-west-1.amazonaws.com/sacem-perfo-ecr-custom-dev:latest"
+    }
+  },
+  "configurationOverrides": {
+    "monitoringConfiguration": {
+      "cloudWatchMonitoringConfiguration": {
+        "logGroupName": "sacem-perfo-cggroup-testjob-emr-dev",
+        "logStreamNamePrefix": "health"
+      },
+      "s3MonitoringConfiguration": {
+        "logUri": "s3://sacem-perfo-emr-poc-dev/logs/"
+      }
+    },
+    "applicationConfiguration": [
+      {
+        "classification": "emr-job-submitter",
+        "properties": {
+          "jobsubmitter.node.selector.reserved-for": "dataexpo"
+        }
+      }
+    ]
+  }
+}

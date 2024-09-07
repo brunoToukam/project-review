@@ -1,0 +1,32 @@
+{
+  "oeuvre": {
+    "description": "Table contenant les oeuvres",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_oeuv/LOAD00000001.parquet",
+    "local_path": "data/octavt_oeuv_test.parquet",
+    "table_name": "octav1_app.octavt_oeuv",
+    "columns": ["idoeuv", "cdestatutoeuv", "paysori", "cdegreoeuv", "ide12", "datdepot", "datcre"],
+    "relationships": {
+      "idoeuv": "Can be joined with cession"
+    }
+  },
+  "ayant_droit": {
+    "description": "Table contenant les oeuvres",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_ayantdrt/LOAD00000001.parquet",
+    "local_path": "data/octavt_ayantdrt_test.parquet",
+    "table_name": "octav1_app.octavt_ayantdrt",
+    "columns": ["idayantdrt", "idjeucle", "idpartpt", "cle", "numcatalrepst", "cedant", "gestnr", "cde_motif_mise_en_attente", "droit_mise_en_attente"],
+    "relationships": {
+      "idoeuv": "Can be joined with cession"
+    }
+  },
+  "cession": {
+    "description": "Table contenant la relation entre le cessionnaire et les oeuvres",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_cess/LOAD00000001.parquet",
+    "local_path": "data/octavt_cess_test.parquet",
+    "table_name": "octav1_app.octavt_cess",
+    "columns": ["idcess", "idtercmplx" ,"priort", "idoeuv"],
+    "relationships": {
+      "idoeuv": "Can be joined with table oeuvres"
+    }
+  }
+}

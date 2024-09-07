@@ -1,0 +1,124 @@
+{
+  "contrats": {
+    "description": "Contrats",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_contrat/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_contrat.parquet",
+    "table_name": "octav1_app.octavt_contrat",
+    "columns": ["idctr", "cdetypctr", "numctr", "indcsbl", "second", "datdbtctr", "datfinctr", "numinf", "idtercmplx", "datdbtsys", "datfinsys", "biem", "cdestatutctr", "expireffetimmediat", "idtercess", "datfincollect", "fledit"],
+    "relationships": {
+      "idctr": "Can be joined with anything numcatal - Starting point"
+    }
+  },
+  "detail_cedant": {
+    "description": "Détails du cédant",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_detcedant/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_detcedant.parquet",
+    "table_name": "octav1_app.octavt_detcedant",
+    "columns": ["iddetcedant", "idpcttypdrt", "idctr", "idpcttypdrtcre", "numpers"],
+    "relationships": {
+      "idctr": "joined with contrat"
+    }
+  },
+  "detail_cedant_catal": {
+    "description": "Catalogue du cédant",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavtj_detcedantcatal/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavtj_detcedantcatal.parquet",
+    "table_name": "octav1_app.octavtj_detcedantcatal",
+    "columns": ["iddetcedant", "numcatal"],
+    "relationships": {
+      "iddetcedant": "Can be joined with det_cedant"
+    }
+  },
+  "detail_cessionnaire": {
+    "description": "Détail du cessionnaire",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_detcessnr/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_detcessnr.parquet",
+    "table_name": "octav1_app.octavt_detcessnr",
+    "columns": ["iddetcessnr", "cdecategadsacem", "numcatal", "numpers", "gestnr", "datdbtvld", "datfinvld", "idctr", "idpcttypdrt"],
+    "relationships": {
+      "idctr": "Can be joined with contrat"
+    }
+  },
+  "element_territoires": {
+    "description": "Table contenant les associations entre territoires complexes et code iso4N (?)",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_eltter/LOAD*.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_eltter.parquet",
+    "table_name": "octav1_app.octavt_eltter",
+    "columns": ["idtercmplx", "cdepaysiso4n", "incl", "ordaff", "ord_list"],
+    "relationships": {
+      "Column1": "Reference static table"
+    }
+  },
+  "groupement_territoires": {
+    "description": "Table contenant les groupements de territoires",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/xxsaref_app/sareftj_gpeter/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_xxsaref_app_sareftj_gpeter.parquet",
+    "table_name": "xxsaref_app.sareftj_gpeter",
+    "columns": ["cdepaysiso4npere", "cdepaysiso4nfils", "gpeterfils", "datdbtvld", "datfinvld"],
+    "relationships": {
+      "cdepaysiso4npere": "Joindre avec cdepaysiso4n de la table element_territoires"
+    }
+  },
+  "pourcentage_type_droit": {
+    "description": "Pourcentage cédé par type de droit",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_pcttypdrt/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_pcttypdrt.parquet",
+    "table_name": "octav1_app.octavt_pcttypdrt",
+    "columns": ["idpcttypdrt", "idclauspartcl", "cdetypdrtsacem", "pct"],
+    "relationships": {
+      "idpcttypdrt": "Can be joined det_cedant",
+      "idpcttypdrtcre": "Can be joined det_cedant"
+    }
+  },
+  "restriction_contrat": {
+    "description": "Tables de transition contrat vers restriction AVEC le additif (gère inclusivité/exclusivité)",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_restrctr/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_restrctr.parquet",
+    "table_name": "octav1_app.octavt_restrctr",
+    "columns": ["idrestctr", "idctr", "additif"
+    ],
+    "relationships": {
+      "idctr": "Can be joined with contrat"
+    }
+  },
+  "restriction_genre": {
+    "description": "Restriction sur le genre de l'oeuvre",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_restrgenre/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_restrgenre.parquet",
+    "table_name": "octav1_app.octavt_restrgenre",
+    "columns": ["idrestctr", "cdegreoeuv"],
+    "relationships": {
+      "idrestctr": "Can be joined with restriction_contrat"
+    }
+  },
+  "restriction_oeuvre": {
+    "description": "Restrictions sur les oeuvres",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_restroeuv/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_restroeuv.parquet",
+    "table_name": "octav1_app.octavt_restroeuv",
+    "columns": ["idrestctr", "ide12"],
+    "relationships": {
+      "idrestctr": "Can be joined with restriction_contrat"
+    }
+  },
+  "dates_restriction_oeuvre": {
+    "description": "Dates de début et de fin des restrictions sur les oeuvres",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_restroeuvtmpl/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_restroeuvtmpl.parquet",
+    "table_name": "octav1_app.octavt_restroeuvtmpl",
+    "columns": ["idrestctr", "datdbtvld", "datfinvld"],
+    "relationships": {
+      "idrestctr": "Can be joined with restriction_contrat"
+    }
+  },
+  "restriction_personnes": {
+    "description": "Restriction sur les personnes",
+    "s3_path": "s3a://sacem-perfo-db-replication-bucket-prd/dms-replication/octav1_app/octavt_restrpers/LOAD00000001.parquet",
+    "local_path": "data/parquet/octave_octav1_app_octavt_restrpers.parquet",
+    "table_name": "octav1_app.octavt_restrpers",
+    "columns": ["idrestctr", "numpers", "numcatal", "cdeexignc"],
+    "relationships": {
+      "idrestctr": "Can be joined with restriction_contrat"
+    }
+  }
+}
